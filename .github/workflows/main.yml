@@ -1,0 +1,25 @@
+name: Main Branch Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run script
+        run: |
+          echo "Running script after merge to main"
+          # Example:
+          # ./your-script.sh
+          # or
+          # python your_script.py 
